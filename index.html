@@ -32,6 +32,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
+        </div>
      </nav>
  
      <section class="main">
@@ -53,7 +57,7 @@
             </div>
             <article>Innovative Ideas, Styleish Designs for Home's and Buissness</article>
         </div>
-
+        
         <div class="lines">
             <div class="line"></div>
             <div class="circle"></div>
@@ -64,5 +68,31 @@
             <div class="circle1"></div>
         </div>
      </section>
+
+     
+    <section class="mob-nav" id="mobNav">
+        <ul class="mob-list">
+          <li>About</li>
+          <li>Benefits</li>
+          <li>Projects</li>
+          <li>Stages</li>
+        </ul>
+      </section>
+      <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const mobNav = document.getElementById("mobNav")
+        let menuOpen = false;
+        menuBtn.addEventListener('click', () => {
+          if(!menuOpen) {
+            menuBtn.classList.add('open');
+            mobNav.classList.add("remove")
+            menuOpen = true;
+          } else {
+            menuBtn.classList.remove('open');
+            mobNav.classList.remove("remove")
+            menuOpen = false;
+          }
+        });
+      </script>
 </body>
 </html>
