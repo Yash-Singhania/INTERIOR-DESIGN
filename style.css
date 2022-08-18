@@ -12,11 +12,12 @@ body, html {
 
 body{
     /* The image used */
-    background-image: url("https://img.freepik.com/free-photo/retro-living-room-interior-design_53876-145503.jpg?w=740&t=st=1658736372~exp=1658736972~hmac=311c3078c75c077f05413965e0086087aa07936d8a53d305cd8db53f76a2d4f4");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background:url("https://img.freepik.com/free-photo/retro-living-room-interior-design_53876-145503.jpg?w=740&t=st=1658736372~exp=1658736972~hmac=311c3078c75c077f05413965e0086087aa07936d8a53d305cd8db53f76a2d4f4");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Nav Bar */
@@ -52,7 +53,6 @@ nav .logo img{
 
 nav .list{
     display: flex;
-    justify-content: flex-end;
     padding-bottom: 2%;
     border-bottom: 2px solid #fff;
 }
@@ -174,4 +174,141 @@ nav .list{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.mob-nav{
+    display: none;
+}
+
+@media only screen and (min-width: 370px) and (max-width: 480px) {
+    .list ul li, .list .contact{
+        display: none;
+    }
+
+    body{
+        background-position: initial;
+    }
+
+    h1{
+        font-size: 30px;
+        width: 300px;
+    }
+    
+    .menu-btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        /* border: 3px solid #fff; */
+      }
+      .menu-btn__burger {
+        width: 30px;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255,101,47,.2);
+        transition: all .5s ease-in-out;
+      }
+      .menu-btn__burger::before,
+      .menu-btn__burger::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255,101,47,.2);
+        transition: all .5s ease-in-out;
+      }
+      .menu-btn__burger::before {
+        transform: translateY(-8px);
+      }
+      .menu-btn__burger::after {
+        transform: translateY(8px);
+      }
+      /* ANIMATION */
+      .menu-btn.open .menu-btn__burger {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+      }
+      .menu-btn.open .menu-btn__burger::before {
+        transform: rotate(45deg) translate(35px, -35px);
+      }
+      .menu-btn.open .menu-btn__burger::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+      }  
+      
+      .mob-nav{
+        background-color: #fff;
+        height: 100vh;
+        width: 60vw;
+        position: absolute;
+        top: 0%;
+        left: -300%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;
+      }
+      
+      .remove{
+        left: 0%;
+      }
+      
+      .mob-list{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.2em;
+        color: #082033;
+        font-weight: 800;
+      }
+      
+      .mob-list li{
+        margin-top: 20%;
+      }
+
+            
+      .mob-list li:hover{
+        background-color: #082033;
+        color: #fff;
+        transition: all 1s ease;
+        padding: 5px 150%;
+      }
+
+      .logo img{
+        width: 80px !important;
+      }
+
+      .popup1, .popup2{
+        width: 150px !important;
+        height: 100px !important;
+        font-size: 13px;
+      }
+
+      .main .popup1, .popup2{
+        position: absolute;
+        top: 45%;
+        right:9%;
+        color: #fff;
+        width: 200px;
+        background: rgb(48,69,86);
+        padding: 20px;
+    }
+    
+    .popup2{
+        top: 75%;
+        right: 40%;
+    }
+
+    .lines{
+        top:65%;
+    }
 }
